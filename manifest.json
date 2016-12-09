@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "JIRA: Log your time!",
+  "description": "This extension helps you and reminds you to log your time in JIRA.",
+  "version": "0.1",
+  "icons": {
+    "16": "16.png",
+    "128": "128.png"
+  },
+  "background": {
+    "page": "src/background.html",
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Log your time!",
+    "default_popup": "src/popup.html"
+  },
+  "options_ui": {
+    "page": "src/options.html",
+    "chrome_style": true
+  },
+  "permissions": [
+      "alarms",
+      "storage"
+  ],
+  "optional_permissions": ["http://*/", "https://*/"]
+}

@@ -1,0 +1,38 @@
+body {
+  margin: 0;
+}
+
+.content {
+  padding: 14px 17px;
+}
+
+input[type="url"].url-input {
+  width: 75%;
+  margin-left: 10px;
+}
+
+input[type="url"].url-input:invalid {
+  border-color: #e44c41;
+}
+
+.action-area {
+  -webkit-box-align: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-pack: end;
+  display: -webkit-box;
+  padding: 14px 17px;
+}
+
+.button-strip {
+  -webkit-box-orient: horizontal;
+  display: -webkit-box;
+}
+
+.button-strip button {
+  -webkit-margin-start: 10px;
+  display: block;
+}
+
+.default-button {
+  border-color: rgba(0, 0, 0, 0.5);
+}
