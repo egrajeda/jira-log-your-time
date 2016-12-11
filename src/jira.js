@@ -45,6 +45,18 @@ if (typeof XMLHttpRequest === 'undefined') {
     });
   };
 
+  exports.inProgressIssuesOf = function(url, username) {
+    return new Promise(function(resolve, reject) {
+
+      request("GET", url + "/rest/api/2/search?jql=assignee=\"" + username + "\" and statusCategory=\"In Progress\"")
+        .then(function(data) {
+          resolve(data.issues);
+        })
+        .catch(reject);
+
+    });
+  }
+
   function request(method, url) {
     return new Promise(function(resolve, reject) {
       var xhr = new XMLHttpRequest();

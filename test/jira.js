@@ -27,4 +27,19 @@ describe('Jira', function() {
     });
 
   });
+
+  describe('#inProgressIssuesOf()', function() {
+
+    it('should return the in progress issues for an user', function(done) {
+      Jira.inProgressIssuesOf(URL, 'juan.perez')
+        .should.be.fulfilled.then(function(inProgressIssues) {
+          inProgressIssues.should.have.length(2);
+          inProgressIssues[0].should.have.property('key', 'XX-100');
+          inProgressIssues[0].should.have.deep.property('fields.summary', 'XX-100 Summary');
+          inProgressIssues[1].should.have.property('key', 'XX-200');
+          inProgressIssues[1].should.have.deep.property('fields.summary', 'XX-200 Summary');
+        }).should.notify(done);
+    });
+
+  });
 });
